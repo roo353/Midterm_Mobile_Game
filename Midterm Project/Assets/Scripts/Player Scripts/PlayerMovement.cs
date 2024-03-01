@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rgbd;
     public Vector3 moveDir;
 
-    public float speed;
+    public CharacterData characterData;
 
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
         moveDir.x = Input.GetAxisRaw("Horizontal");
         moveDir.y = Input.GetAxisRaw("Vertical");
 
-        moveDir *= speed;
+        moveDir *= characterData.moveSpeed;
 
         rgbd.velocity = moveDir;
     }
