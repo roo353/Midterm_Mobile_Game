@@ -40,6 +40,9 @@ public class PlayerStats : MonoBehaviour
     public Image xpBar;
     public Text levelText;
 
+    [SerializeField] private AudioSource damageSound;
+
+
     public List<LevelRange> levelRanges;
 
     void Awake()
@@ -128,7 +131,7 @@ public class PlayerStats : MonoBehaviour
             Kill();
             }
         }
-
+        damageSound.Play();
         UpdateHealthBar();
     }
 
